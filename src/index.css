@@ -27,6 +27,9 @@ button {
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
 }
+.txt-blue{
+  color: var(--text-blue);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

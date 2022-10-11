@@ -6,6 +6,7 @@ import Starting from "../components/starting";
 import Header from "../components/header";
 import { db } from "../utils/firebaseconfig";
 import { collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../utils/authcontext";
 import {
   Loading,
@@ -15,8 +16,9 @@ import {
 import { Navigate, redirect } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [x, setX] = useState(0);
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
 
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState("");
@@ -68,7 +70,7 @@ const Signup = () => {
       console.log("failed creating account");
     }
     setIsLoading(false);
-    return (<Navigate to="/verifyEmail"/>)
+    navigate("/verifyEmail")
   };
 
   switch (step) {
@@ -118,7 +120,7 @@ const Signup = () => {
 const SignUp = () => {
   return (
     <>
-      <Header start={true} bar={true} />
+      <Header transparent={true} white_bar={true} />
       <Layout />
       <Signup />
     </>

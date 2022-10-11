@@ -1,14 +1,12 @@
 import React from "react";
 import Header from "../components/header";
 import { useParams } from "react-router-dom";
-// import AllPages from "../components/pdf/all-page";
-import samplePDF from "../files/Week 09 Instrument Transformers.pdf";
-import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
+import AllPages from "../components/pdf/all-page";
+import samplePDF from "../files/Lec12.pdf";
+// import DocViewer, { DocViewerRenderers, PDFRenderer } from "react-doc-viewer";
+// import FileViewer from "react-file-viewer";
 const FileContent = () => {
-  const docs = [
-    { uri: require("../files/Lec12.pdf") },
-    { uri: require("../files/Readme or die.txt") },
-  ];
+  const file = require("../files/Lec12.pdf");
   //   const {id} = useParams()
 
   return (
@@ -17,7 +15,7 @@ const FileContent = () => {
       <div className="container">
         <div className="sort-filter-bar">
           <div className="filter-bar">
-            <a href={docs} download>
+            <a href={file} download>
               <button className="btn-doc btn-down">DOWNLOAD</button>
             </a>
           </div>
@@ -27,11 +25,9 @@ const FileContent = () => {
           </div>
         </div>
         <div className="container">
-          <DocViewer
-            pluginRenderers={DocViewerRenderers}
-            documents={docs}
-          ></DocViewer>
-          {/* <AllPages pdf={samplePDF}></AllPages> */}
+          {/* <FileViewer fileType={type} filePath={file} /> */}
+
+          <AllPages pdf={file}></AllPages>
         </div>
       </div>
     </>
