@@ -1,0 +1,275 @@
+* {
+  --icon-pdf: "https://img.icons8.com/color/40/pdf-2--v1.png";
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+.sort-filter-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+select[name="filter"],
+input[name="filter"] {
+  font: 14px;
+  padding: 0px 10px 0px 10px;
+}
+.btn-filter {
+  margin: none;
+  margin-left: 10px;
+  margin-right: 20px;
+  outline: none;
+  border: none;
+  width: 144px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0px 2px 5px 1px rgba(29, 38, 113, 0.22);
+  border-radius: 50px;
+}
+
+.sort-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.file-bar {
+  background: #ffffff;
+  box-shadow: 0px 4px 10px 2px rgba(29, 38, 113, 0.22);
+  border-radius: 10px;
+}
+
+.file-display {
+}
+.files-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  transition: opacity 1s linear;
+  /* grid-template-columns: repeat(auto-fill, 300px); */
+}
+
+.files-list {
+  display: grid;
+  align-items: center;
+  /* grid-template-rows: repeat(auto-fill, minmax(10px, 1fr)); */
+  min-height: 1vh;
+  box-shadow: 0px 4px 5px 4px rgba(29, 38, 113, 0.22);
+}
+.file-card {
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  width: 224px;
+  height: 255px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px 2px rgba(29, 38, 113, 0.22);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: ease 0.25s transform, ease 0.25s box-shadow;
+}
+
+.file-card:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.file-card-head {
+  background-image: linear-gradient(270deg, #c33764 0%, #1d2671 100%);
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.content-dock {
+  display: flex;
+  margin-top: 5px;
+}
+.content-dock-l {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 90%;
+}
+.content-dock-r {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.file-content {
+  width: 90%;
+}
+.file-grid-date {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #c6c6c6;
+}
+/* .file-type-icon::before{
+  content:attr(image);
+
+} */
+.files-grid a,
+.files-list a {
+  color: var(--primary-blue);
+}
+.file-tile {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70px;
+  margin-top: 0px;
+  border-bottom: 1px solid;
+}
+.file-tile:hover{
+  background: rgb(201, 201, 201);
+}
+.tile-padding {
+  padding: 0px 20px 0px 20px;
+}
+.file-tile-head {
+  width: 5%;
+}
+.content-dock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.file-tile-content {
+  width: 90%;
+}
+.file-tile-date,
+.file-tile-size {
+  width: 10%;
+}
+.btn-add-file {
+  border-radius: 50px;
+  width: 72.48px;
+  height: 72.04px;
+  background: #1d2671;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 60px;
+  cursor: pointer;
+}
+.btn-add-file:hover {
+  background: #1d2571f5;
+  box-shadow: 0px 4px 10px 2px rgba(29, 38, 113, 0.22);
+}
+.btn-view {
+  padding: 0px 5px 0px 5px;
+  cursor: pointer;
+}
+.btn-search {
+  cursor: pointer;
+  padding: 0px 20px 0px 0px;
+}
+.view-unselected {
+  color: #a0b6da;
+}
+
+.file-display-off {
+  display: none;
+}
+
+.btn-doc {
+  border: none;
+  outline: none;
+  font-weight: 500;
+  box-shadow: 0px 4px 10px 2px rgba(29, 38, 113, 0.22);
+  border-radius: 30px;
+  width: 188px;
+  height: 43px;
+  color: white;
+}
+
+.btn-down {
+  background: #c33764;
+}
+.btn-edit {
+  margin-right: 40px;
+  color: #1d2671;
+  border: 2px solid #1d2671;
+}
+.btn-del {
+  background: #1d2671;
+}
+.m-auto{
+ margin: auto;
+}
+.react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 30px 2px rgba(29, 38, 113, 0.19);
+  
+}
+
+.dropzone {
+  height: 300px;
+  width: 800px;
+  margin-top: 50px;
+  border-radius: 100px;
+  display: inline-block;
+  border-style: dashed;
+  box-sizing: border-box;
+  left: 290px;
+  top: 400px;
+  background: #FFFFFF;
+  padding: 0.25rem;
+  padding-left: 20px;
+  border: 2px dashed #fff;
+  background:
+   linear-gradient(#fff 0 0) padding-box,
+   linear-gradient(90deg, #C23865 0%, #1F2771 100%) border-box; 
+  
+}
+.drag1{
+  font-size: 15px;
+  text-indent: -70px;
+}
+.button3{
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  width: 165px;
+  height: 43px;
+  left: 700px;
+  top: 100px;
+  border-radius: 50px;
+  margin-top: 50px;
+  border: 3px solid #0000;
+  border: radius 50px;
+  background:
+    linear-gradient(90deg, #C23865 0%, #1F2771 100%) padding-box,
+    linear-gradient(90deg, #C23865 0%, #1F2771 100%) border-box;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.drag{
+  font-size: 20px;
+  text-indent: -70px;
+  
+}
+.drag{
+  font-size: 20px;
+  text-indent: -70px;
+  
+}

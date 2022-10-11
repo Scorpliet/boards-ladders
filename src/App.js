@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import PrivateRoute from "./utils/PrivateRoute";
+import SignUp from "./pages/signup";
+import Login from "./pages/login";
+import Landing from "./pages/landing";
+import { AuthProvider } from "./utils/authcontext";
+import { BoardFallbackComponent, EmailConfirmation } from "./components/subComp";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import FileContent from "./pages/fileContent";
+import Details from "./pages/addFile";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <main>
+        <AuthProvider>
+          <Router>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <PrivateRoute>
+                    <Landing />
+                  </PrivateRoute>
+                }
+              />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/add_files" element={<Details/>} />
+              <Route path="/verifyEmail" element={<EmailConfirmation/>}/>
+              <Route path="/login" element={<Login />} />
+              <Route path="/file" element={<FileContent/>}/>
+            </Routes>
+          </Router>
+        </AuthProvider>
+      </main>
+
   );
 }
 
