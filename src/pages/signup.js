@@ -13,7 +13,6 @@ import {
   AccConfirm,
   Layout,
 } from "../components/subComp";
-import { Navigate, redirect } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();

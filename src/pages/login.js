@@ -1,10 +1,11 @@
 import React from "react";
 import { useState, useRef } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../utils/authcontext";
 import Header from "../components/header";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [passVisible, setPassVisible] = useState(false);
   const emailRef = useRef();
   const passRef = useRef();
@@ -25,12 +26,13 @@ const Login = () => {
       console.log(emailRef.current.value, passRef.current.value);
       await login(emailRef.current.value, passRef.current.value);
       console.log("logged in");
-      return <Navigate to="/" />;
+      
     } catch {
       console.log("failed logging in");
       setError("Failed to Log in");
     }
     setLoading("false");
+    navigate("/")
   };
 
   return (
