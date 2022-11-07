@@ -39,38 +39,45 @@ const Login = () => {
     <>
       <Header/>
       <div className="content content-left"> 
-
         <form className="form-area form-login">
-          <label>Your company email</label>
+          <div style={{minWidth:"690px", margin:"auto"}}>
+
+          <label>Your email</label>
           <br />
           <input
             className="form-input"
+            style={{minWidth:"100%"}}
             name="comp_email"
             type="text"
-            placeholder="Company email"
+            placeholder="your@email.com"
             ref={emailRef}
             required
-          />
+            />
+          </div>
           <br />
           <br />
+          <div style={{minWidth:"690px", margin:"auto"}}>
           <label>Password</label>
           <br />
           <div className="password-field">
             <input
               required
+              style={{minWidth:"690px"}}
               className="form-input password"
               name="comp_pass"
               type={passVisible ? "text" : "password"}
               placeholder="Password"
               ref={passRef}
-            />
+              />
             <i className="material-icons eyeButton" onClick={change}>
               visibility_off
             </i>
           </div>
+          </div>
           <br />
+          <br/>
           <p>
-            <a href="#">Frogot Password?</a>
+            <a href="#">Forgot Password?</a>
           </p>
           <div className="btn-container form-login">
             <Link className="btn-link" to="/signup">

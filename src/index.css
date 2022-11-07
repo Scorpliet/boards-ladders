@@ -269,6 +269,10 @@ img {
   color: var(--text-blue);
 }
 
+.content-left{
+    margin: auto;
+}
+
 .form-login {
   margin: auto;
 }
